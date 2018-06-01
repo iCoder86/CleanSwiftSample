@@ -124,13 +124,6 @@
 			path = Custom;
 			sourceTree = "<group>";
 		};
-		E6885F0420C16BCE003B09FF /* Workers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Workers;
-			sourceTree = "<group>";
-		};
 		E6885F0520C16BE6003B09FF /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,7 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				E6885F0520C16BE6003B09FF /* Services */,
-				E6885F0420C16BCE003B09FF /* Workers */,
 				E6885EFD20C141EC003B09FF /* Helper */,
 				E6C9172420BFEA5B00F3AB27 /* Scenes */,
 				E6C9171620BFEA3000F3AB27 /* Main.storyboard */,

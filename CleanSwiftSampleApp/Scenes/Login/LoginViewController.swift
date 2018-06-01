@@ -14,9 +14,8 @@ import UIKit
 
 protocol LoginDisplayLogic: class
 {
-  func displaySomething(viewModel: Login.Something.ViewModel)
-    func loginSuccess()
-    func loginFail()
+    func loginSuccess(viewModel: Login.Success.ViewModel)
+    func loginFail(viewModel: Login.Fail.ViewModel)
 }
 
 class LoginViewController: UIViewController, LoginDisplayLogic
@@ -24,8 +23,6 @@ class LoginViewController: UIViewController, LoginDisplayLogic
   var interactor: LoginBusinessLogic?
   var router: (NSObjectProtocol & LoginRoutingLogic & LoginDataPassing)?
 
-    @IBOutlet weak var txtMobile:UITextView!
-    
   // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -73,37 +70,31 @@ class LoginViewController: UIViewController, LoginDisplayLogic
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    doSomething()
   }
   
   // MARK: Do something
   
-  //@IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var txtMobile:UITextField!
   
-  func doSomething()
-  {
-    let request = Login.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-    
-  func displaySomething(viewModel: Login.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
-    
-    func loginSuccess() {
+    func loginSuccess(viewModel: Login.Success.ViewModel) {
         router?.routeToVerify(segue: nil)
     }
-    
-    func loginFail() {
-        
+
+    func loginFail(viewModel: Login.Fail.ViewModel) {
+        let alert = UIAlertController.init(title: "Fail", message: viewModel.message, preferredStyle: .alert)
+        self.present(alert, animated: true, completion: nil)
+        let when = DispatchTime.now() + 2
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            alert.dismiss(animated: true, completion: {
+                
+            })
+        }
     }
 }
 
 extension LoginViewController {
-    
     @IBAction func sendSMSAction() {
-        interactor?.createLogin()
+        let request = Login.Success.Request(mobileNumber: txtMobile.text!)
+        interactor?.createLogin(request: request)
     }
-    
 }

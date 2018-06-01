@@ -115,6 +115,9 @@
                         <viewLayoutGuide key="safeArea" id="6UJ-rJ-FTq"/>
                     </view>
                     <navigationItem key="navigationItem" id="mfo-Q4-Keg"/>
+                    <connections>
+                        <outlet property="txtMobile" destination="dTy-tB-dgC" id="nYk-nU-toO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6RA-w3-bJP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -200,6 +203,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6Zd-hV-Js4"/>
+        <segue reference="G7w-QZ-PcM"/>
     </inferredMetricsTieBreakers>
 </document>

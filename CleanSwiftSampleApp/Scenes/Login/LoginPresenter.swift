@@ -14,9 +14,8 @@ import UIKit
 
 protocol LoginPresentationLogic
 {
-  func presentSomething(response: Login.Something.Response)
-    func loginSuccess()
-    func loginFail()
+    func loginSuccess(response: Login.Success.Response)
+    func loginFail(response: Login.Fail.Response)
 }
 
 class LoginPresenter: LoginPresentationLogic
@@ -25,17 +24,13 @@ class LoginPresenter: LoginPresentationLogic
   
   // MARK: Do something
   
-  func presentSomething(response: Login.Something.Response)
-  {
-    let viewModel = Login.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
-    
-    func loginSuccess() {
-        viewController?.loginSuccess()
+    func loginSuccess(response: Login.Success.Response) {
+        let viewModel = Login.Success.ViewModel(userId:response.userId)
+        viewController?.loginSuccess(viewModel: viewModel)
     }
     
-    func loginFail() {
-        
+    func loginFail(response: Login.Fail.Response) {
+        let viewModel = Login.Fail.ViewModel(message: response.message)
+        viewController?.loginFail(viewModel: viewModel)
     }
 }

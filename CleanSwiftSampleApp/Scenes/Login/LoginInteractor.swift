@@ -14,14 +14,12 @@ import UIKit
 
 protocol LoginBusinessLogic
 {
-  func doSomething(request: Login.Something.Request)
-    func createLogin()
+    func createLogin(request: Login.Success.Request)
 }
 
 protocol LoginDataStore
 {
   var name: String { get set }
-    var loginUserMobileNumber: String { get set }
 }
 
 class LoginInteractor: LoginBusinessLogic, LoginDataStore
@@ -29,22 +27,17 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
   var presenter: LoginPresentationLogic?
   var worker: LoginWorker?
   var name: String = ""
-    var loginUserMobileNumber: String = ""
   
   // MARK: Do something
-  
-  func doSomething(request: Login.Something.Request)
-  {
-    worker = LoginWorker()
-    worker?.doSomeWork()
     
-    let response = Login.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
-    
-    func createLogin() {
-        let result = ServiceAPI.loginWith(mobileNumber:loginUserMobileNumber)
-        presenter?.loginSuccess()
+    func createLogin(request: Login.Success.Request) {
+        let result = ServiceAPI.loginWith(request: request)
+        if result == "123" {
+            presenter?.loginSuccess(response: Login.Success.Response(userId: result))
+        }
+        else {
+            presenter?.loginFail(response: Login.Fail.Response(message: result))
+        }
     }
 }
 

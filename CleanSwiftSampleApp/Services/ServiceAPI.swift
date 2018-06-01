@@ -14,7 +14,7 @@ class ServiceAPI {
         
     }
     
-    class func loginWith(mobileNumber:String)->String {
-        return "123"
+    class func loginWith(request: Login.Success.Request)->String {
+        return "Error Getting Data"
     }
 }

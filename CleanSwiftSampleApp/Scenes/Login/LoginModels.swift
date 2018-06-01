@@ -16,16 +16,31 @@ enum Login
 {
   // MARK: Use cases
   
-  enum Something
+  enum Success
   {
     struct Request
     {
+        var mobileNumber:String
     }
     struct Response
     {
+        var userId:String
     }
     struct ViewModel
     {
+        var userId:String
     }
   }
+    
+    enum Fail {
+        struct Request {
+            var mobileNumber:String
+        }
+        struct Response {
+            var message:String
+        }
+        struct ViewModel {
+            var message:String
+        }
+    }
 }
