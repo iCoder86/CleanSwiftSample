@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E6885F0020C14213003B09FF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6885EFF20C14213003B09FF /* Extensions.swift */; };
+		E6885F0320C1438B003B09FF /* CustomDismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6885F0220C1438B003B09FF /* CustomDismissSegue.swift */; };
+		E6885F0920C16C4F003B09FF /* ServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6885F0820C16C4F003B09FF /* ServiceAPI.swift */; };
 		E6C9171320BFEA3000F3AB27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C9171220BFEA3000F3AB27 /* AppDelegate.swift */; };
 		E6C9171820BFEA3000F3AB27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6C9171620BFEA3000F3AB27 /* Main.storyboard */; };
 		E6C9171A20BFEA3E00F3AB27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6C9171920BFEA3E00F3AB27 /* Assets.xcassets */; };
@@ -44,6 +47,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E6885EFF20C14213003B09FF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E6885F0220C1438B003B09FF /* CustomDismissSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDismissSegue.swift; sourceTree = "<group>"; };
+		E6885F0820C16C4F003B09FF /* ServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPI.swift; sourceTree = "<group>"; };
 		E6C9170F20BFEA3000F3AB27 /* CleanSwiftSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanSwiftSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6C9171220BFEA3000F3AB27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6C9171720BFEA3000F3AB27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -93,6 +99,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E6885EFD20C141EC003B09FF /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E6885F0120C14376003B09FF /* Custom */,
+				E6885EFE20C141F4003B09FF /* Extensions */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		E6885EFE20C141F4003B09FF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E6885EFF20C14213003B09FF /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E6885F0120C14376003B09FF /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				E6885F0220C1438B003B09FF /* CustomDismissSegue.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		E6885F0420C16BCE003B09FF /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		E6885F0520C16BE6003B09FF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E6885F0820C16C4F003B09FF /* ServiceAPI.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		E6C9170620BFEA3000F3AB27 = {
 			isa = PBXGroup;
 			children = (
@@ -112,8 +158,10 @@
 		E6C9171120BFEA3000F3AB27 /* CleanSwiftSampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				E6885F0520C16BE6003B09FF /* Services */,
+				E6885F0420C16BCE003B09FF /* Workers */,
+				E6885EFD20C141EC003B09FF /* Helper */,
 				E6C9172420BFEA5B00F3AB27 /* Scenes */,
-				E6C9171220BFEA3000F3AB27 /* AppDelegate.swift */,
 				E6C9171620BFEA3000F3AB27 /* Main.storyboard */,
 				E6C9171920BFEA3E00F3AB27 /* Assets.xcassets */,
 				E6C9171B20BFEA3E00F3AB27 /* LaunchScreen.storyboard */,
@@ -125,11 +173,12 @@
 		E6C9172420BFEA5B00F3AB27 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E6C9171220BFEA3000F3AB27 /* AppDelegate.swift */,
 				E6C9175A20BFEBAA00F3AB27 /* Splash */,
-				E6C9174D20BFEB4100F3AB27 /* Home */,
-				E6C9174020BFEB0E00F3AB27 /* Verify */,
 				E6C9172520BFEAA700F3AB27 /* Sliding */,
 				E6C9173220BFEAD900F3AB27 /* Login */,
+				E6C9174020BFEB0E00F3AB27 /* Verify */,
+				E6C9174D20BFEB4100F3AB27 /* Home */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -270,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6885F0920C16C4F003B09FF /* ServiceAPI.swift in Sources */,
 				E6C9173D20BFEAEF00F3AB27 /* LoginViewController.swift in Sources */,
 				E6C9172D20BFEABC00F3AB27 /* SlidingModels.swift in Sources */,
 				E6C9173E20BFEAEF00F3AB27 /* LoginWorker.swift in Sources */,
@@ -289,6 +339,7 @@
 				E6C9175720BFEB5600F3AB27 /* HomeRouter.swift in Sources */,
 				E6C9173920BFEAEF00F3AB27 /* LoginInteractor.swift in Sources */,
 				E6C9176320BFEBF600F3AB27 /* SplashPresenter.swift in Sources */,
+				E6885F0320C1438B003B09FF /* CustomDismissSegue.swift in Sources */,
 				E6C9171320BFEA3000F3AB27 /* AppDelegate.swift in Sources */,
 				E6C9175520BFEB5600F3AB27 /* HomeModels.swift in Sources */,
 				E6C9174820BFEB3400F3AB27 /* VerifyModels.swift in Sources */,
@@ -297,6 +348,7 @@
 				E6C9173C20BFEAEF00F3AB27 /* LoginRouter.swift in Sources */,
 				E6C9174C20BFEB3400F3AB27 /* VerifyWorker.swift in Sources */,
 				E6C9174920BFEB3400F3AB27 /* VerifyPresenter.swift in Sources */,
+				E6885F0020C14213003B09FF /* Extensions.swift in Sources */,
 				E6C9172C20BFEABC00F3AB27 /* SlidingInteractor.swift in Sources */,
 				E6C9176220BFEBF600F3AB27 /* SplashModels.swift in Sources */,
 				E6C9172E20BFEABC00F3AB27 /* SlidingPresenter.swift in Sources */,

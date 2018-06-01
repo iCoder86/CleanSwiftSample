@@ -15,18 +15,19 @@ import UIKit
 protocol VerifyBusinessLogic
 {
   func doSomething(request: Verify.Something.Request)
+//    func verifySuccess(request: Verify.Something.Request)
 }
 
 protocol VerifyDataStore
 {
-  //var name: String { get set }
+  var name: String { get set }
 }
 
 class VerifyInteractor: VerifyBusinessLogic, VerifyDataStore
 {
   var presenter: VerifyPresentationLogic?
   var worker: VerifyWorker?
-  //var name: String = ""
+  var name: String = ""
   
   // MARK: Do something
   

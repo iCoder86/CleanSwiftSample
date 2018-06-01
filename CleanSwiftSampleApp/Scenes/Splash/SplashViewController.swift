@@ -81,8 +81,6 @@ class SplashViewController: UIViewController, SplashDisplayLogic
     
   // MARK: Do something
   
-  //@IBOutlet weak var nameTextField: UITextField!
-  
   func doSomething()
   {
     let request = Splash.Something.Request()

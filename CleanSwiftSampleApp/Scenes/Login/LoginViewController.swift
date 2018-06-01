@@ -15,6 +15,8 @@ import UIKit
 protocol LoginDisplayLogic: class
 {
   func displaySomething(viewModel: Login.Something.ViewModel)
+    func loginSuccess()
+    func loginFail()
 }
 
 class LoginViewController: UIViewController, LoginDisplayLogic
@@ -22,6 +24,8 @@ class LoginViewController: UIViewController, LoginDisplayLogic
   var interactor: LoginBusinessLogic?
   var router: (NSObjectProtocol & LoginRoutingLogic & LoginDataPassing)?
 
+    @IBOutlet weak var txtMobile:UITextView!
+    
   // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -81,9 +85,25 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     let request = Login.Something.Request()
     interactor?.doSomething(request: request)
   }
-  
+    
   func displaySomething(viewModel: Login.Something.ViewModel)
   {
     //nameTextField.text = viewModel.name
   }
+    
+    func loginSuccess() {
+        router?.routeToVerify(segue: nil)
+    }
+    
+    func loginFail() {
+        
+    }
+}
+
+extension LoginViewController {
+    
+    @IBAction func sendSMSAction() {
+        interactor?.createLogin()
+    }
+    
 }

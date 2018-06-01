@@ -26,6 +26,7 @@ enum Verify
     }
     struct ViewModel
     {
+//        var LoginMobileNumber: String
     }
   }
 }

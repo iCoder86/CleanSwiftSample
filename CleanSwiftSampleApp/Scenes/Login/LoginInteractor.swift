@@ -15,18 +15,21 @@ import UIKit
 protocol LoginBusinessLogic
 {
   func doSomething(request: Login.Something.Request)
+    func createLogin()
 }
 
 protocol LoginDataStore
 {
-  //var name: String { get set }
+  var name: String { get set }
+    var loginUserMobileNumber: String { get set }
 }
 
 class LoginInteractor: LoginBusinessLogic, LoginDataStore
 {
   var presenter: LoginPresentationLogic?
   var worker: LoginWorker?
-  //var name: String = ""
+  var name: String = ""
+    var loginUserMobileNumber: String = ""
   
   // MARK: Do something
   
@@ -38,4 +41,11 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
     let response = Login.Something.Response()
     presenter?.presentSomething(response: response)
   }
+    
+    func createLogin() {
+        let result = ServiceAPI.loginWith(mobileNumber:loginUserMobileNumber)
+        presenter?.loginSuccess()
+    }
 }
+
+

@@ -75,7 +75,8 @@ class VerifyViewController: UIViewController, VerifyDisplayLogic
   // MARK: Do something
   
   //@IBOutlet weak var nameTextField: UITextField!
-  
+  @IBOutlet weak var lblMobileNumber: UILabel!
+    
   func doSomething()
   {
     let request = Verify.Something.Request()
@@ -85,5 +86,14 @@ class VerifyViewController: UIViewController, VerifyDisplayLogic
   func displaySomething(viewModel: Verify.Something.ViewModel)
   {
     //nameTextField.text = viewModel.name
+//    lblMobileNumber.text = viewModel.LoginMobileNumber
   }
 }
+
+extension VerifyViewController {
+    @IBAction func verifyAction() {
+//        interactor?.verifySuccess(request: )
+    }
+    
+}
+

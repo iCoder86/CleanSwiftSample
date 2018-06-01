@@ -13,7 +13,7 @@
         <!--Splash View Controller-->
         <scene sceneID="Q8g-Ov-Hox">
             <objects>
-                <viewController id="B6G-aA-qbW" customClass="SplashViewController" customModule="CleanSwiftSampleApp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashViewController" id="B6G-aA-qbW" customClass="SplashViewController" customModule="CleanSwiftSampleApp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wpo-FA-s6u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,7 +44,7 @@
         <!--Sliding View Controller-->
         <scene sceneID="fel-go-ZjF">
             <objects>
-                <viewController id="2Ya-Xd-QE2" customClass="SlidingViewController" customModule="CleanSwiftSampleApp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SlidingViewController" id="2Ya-Xd-QE2" customClass="SlidingViewController" customModule="CleanSwiftSampleApp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HHZ-bL-WGJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,6 +58,9 @@
                                 <state key="normal" title="Join Us">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="3hZ-Bj-PL7" kind="presentation" id="7Kk-XJ-ww7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -72,6 +75,96 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D4h-KF-7EW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="668" y="6"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="OC2-o5-OQY">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="tCJ-cj-aEj" customClass="LoginViewController" customModule="CleanSwiftSampleApp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rmv-l4-98c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9VD-re-Pdm">
+                                <rect key="frame" x="16" y="20" width="58" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <segue destination="2Ya-Xd-QE2" kind="custom" customClass="CustomDismissSegue" customModule="CleanSwiftSampleApp" customModuleProvider="target" id="G7w-QZ-PcM"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="+(91)987654321" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dTy-tB-dgC">
+                                <rect key="frame" x="103" y="165" width="169" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jux-Rl-9Xn">
+                                <rect key="frame" x="103" y="210" width="169" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83052188159999996" green="0.64481979609999995" blue="0.2180896997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Send SMS">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendSMSAction" destination="tCJ-cj-aEj" eventType="touchUpInside" id="VSR-1D-HRr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6UJ-rJ-FTq"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mfo-Q4-Keg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6RA-w3-bJP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2094" y="6"/>
+        </scene>
+        <!--Verify View Controller-->
+        <scene sceneID="mIz-p0-1Fa">
+            <objects>
+                <viewController storyboardIdentifier="VerifyViewController" id="on4-G2-Ulu" customClass="VerifyViewController" customModule="CleanSwiftSampleApp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jym-xK-ovp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8vX-VY-FcR">
+                                <rect key="frame" x="139" y="168" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ir1-Zh-KAX">
+                                <rect key="frame" x="139" y="218" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83052188159999996" green="0.64481979609999995" blue="0.2180896997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Verify">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2Ya-Xd-QE2" kind="custom" customClass="CustomDismissSegue" customModule="CleanSwiftSampleApp" customModuleProvider="target" id="6Zd-hV-Js4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8X6-4b-cTz">
+                                <rect key="frame" x="16" y="127" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Sck-3h-HLN"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6Fe-8t-JFG"/>
+                    <connections>
+                        <outlet property="lblMobileNumber" destination="8X6-4b-cTz" id="NTY-rm-zZS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SrJ-Bf-9te" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="668" y="-782"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jg7-ns-qqi">
@@ -88,5 +181,25 @@
             </objects>
             <point key="canvasLocation" x="-762" y="6"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rSI-AP-gk1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="3hZ-Bj-PL7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dgS-75-Z7U">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tCJ-cj-aEj" kind="relationship" relationship="rootViewController" id="DOJ-RZ-GAb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pxE-X7-qsg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1388" y="6"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="6Zd-hV-Js4"/>
+    </inferredMetricsTieBreakers>
 </document>
